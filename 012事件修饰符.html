@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+    <style>
+        *{
+            margin: 10px 0px;
+        }
+        .hh{
+            height: 50px;
+            width: 500px;
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>欢迎来到{{information}}</h1>
+        <a href="http://www.baidu.com" @click.prevent='round'>点我提示信息</a>
+
+        <div class="hh" @click='round'>
+            <button @click.stop='round'>点我提示信息</button>
+        </div>
+
+        <button @click.once='round'>点我提示信息</button>
+
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+                information: '哈哈哈哈'
+            }
+        },
+        methods: {
+            round() {
+                alert('哈哈哈哈')
+                // event.preventDefault()
+            }
+        }
+    })
+</script>
+
+</html>

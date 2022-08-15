@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>欢迎来到{{name}}</h1>
+        <button @click='information1'>点击获取信息（不传参）</button>
+        <button @click='information2(66,$event)'>点击获取信息（传参）</button>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+                name: '哈哈哈哈'
+            }
+        },
+        methods: {
+            information1() {
+                alert('哈哈哈哈哈');
+            },
+            information2(number,$evevt) {
+                alert(number),
+                console.log(event.target.innerHTML);
+            }
+        }
+    })
+</script>
+
+</html>

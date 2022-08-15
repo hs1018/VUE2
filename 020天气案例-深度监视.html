@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>今天天气很{{info}}</h1>
+        <button @click='change'>切换天气</button>
+        <hr>
+        <h3>a的值是：{{number.a}}</h3>
+        <button @click='jiayia'>点我a加一</button>
+        <br>
+        <h3>a的值是：{{number.b}}</h3>
+        <button @click='jiayib'>点我b加一</button>
+    </div>
+</body>
+
+<script>
+    const vm = new Vue({
+        el: '#container',
+        data: {
+            weather: true,
+            number: {
+                a: 1,
+                b: 2
+            }
+        },
+
+        computed: {
+            info() {
+                return this.weather ? '炎热' : '凉爽'
+            }
+        },
+
+        methods: {
+            change() {
+                this.weather = !this.weather
+            },
+
+            jiayia() {
+                this.number.a++
+            },
+            jiayib() {
+                this.number.b++
+            }
+        },
+
+        watch: {
+            weather: {
+                handler(newValue, oldValue) {
+                    console.log("weather被修改了", newValue, oldValue)
+                }
+            },
+
+            // 'number.a':{
+            //     handler(newValue, oldValue) {
+            //         console.log("a被修改了", newValue, oldValue)
+            //     }
+            // }
+            number: {
+                deep:true,
+                handler(newValue, oldValue) {
+                    console.log('number被修改了')
+                }
+            }
+        }
+    })
+</script>
+
+</html>

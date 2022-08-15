@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>a的值是：{{a}}</h1>
+        <button @click='a++'>点击a++</button>
+        <div v-show="a===1">1</div>
+        <div v-show="a===2">2</div>
+
+        <div v-if="a===3">3</div>
+        <div v-else-if="a===4">4</div>
+        <div v-else=>dcfdesfvewfv</div>
+
+
+
+        <template v-if="a===5">
+            <h2>哈哈</h2>
+            <h2>哈哈</h2>
+            <h2>哈哈</h2>
+        </template>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+                a: 0
+            }
+        },
+    })
+</script>
+
+</html>

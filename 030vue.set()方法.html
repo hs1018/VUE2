@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>学校信息</h1>
+        <button @click="gender">点击添加性别</button>
+
+        <h2 v-if="person.gender">性别：{{person.gender}}</h2>
+
+        <ul>
+            <li v-for="(p,index) in person" :key="index">
+                {{p.name}}--{{p.age}}--{{p.like}}
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+                person: [
+                    
+                    { name: '滴答', age: 20, like: '吃' }
+                ]
+            }
+        },
+        methods: {
+            gender(){
+                // Vue.set(this.person,'gender','男')
+                this.$set(this.person,'gender','男')
+
+            }
+        },
+    })
+</script>
+
+</html>

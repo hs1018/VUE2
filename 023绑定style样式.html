@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+    <style>
+        #container {
+            width: 500px;
+            height: 200px;
+            border: 5px solid green;
+        }
+
+        .basic {
+            color: blue;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div class='basic' :style='styleObj'>{{name}}</div>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+                name: '哈哈哈',
+                fsize: 40,
+
+                styleObj: {
+                    fontSize: '40px',
+                    color:'red',
+                    backgroundColor:'yellow'
+                }
+            }
+        }
+    })
+</script>
+
+</html>

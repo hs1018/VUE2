@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <school></school>
+    </div>
+
+</body>
+
+<script>
+    const s = Vue.extend({
+        template: `<h1>名字是：{{name}}</h1>`,
+        data() {
+            return {
+                name: '当当'
+            }
+        },
+    })
+    new Vue({
+        el: '#container',
+        components: {
+            school: s
+        }
+    })
+</script>
+
+</html>

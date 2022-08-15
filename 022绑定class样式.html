@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+    <style>
+        #container{
+            width: 500px;
+            height: 200px;
+            border: 5px solid green;
+        }
+        .basic{
+            color: blue;
+            
+        }
+        .normal{
+            background-color: blueviolet;
+            width: 500px;
+            height: 200px;
+        }
+        .happy{
+            background-color: coral;
+            width: 500px;
+            height: 200px;
+        }
+        .sad{
+            background-color: black;
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div class='basic' v-bind:class = 'xin' @click = 'change'>{{name}}</div>
+        <br><br>
+        <div class='basic' v-bind:class = 'xin' @click = 'change'>{{name}}</div>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el:'#container',
+        data() {
+            return {
+                name:'哈哈哈',
+                xin:'normal'
+            }
+        },
+        methods: {
+            change(){
+                const arr = ['normal','happy','sad'];
+                const index = parseInt(Math.random()*3);
+                this.xin = arr[index]
+            }
+        },
+    })
+</script>
+</html>

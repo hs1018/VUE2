@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>哈喽，{{name}}</h1>
+    </div>
+</body>
+
+<script>
+    // const v = new Vue({
+    //     data:{
+    //         name:'哈哈哈哈哈'
+    //     }
+    // })
+
+    // v.$mount('#container')
+
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+                name: '哈哈哈哈'
+            }
+        }
+    })
+</script>
+
+</html>

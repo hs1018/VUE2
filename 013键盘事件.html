@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./01vue.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <input type="text" placeholder="哈哈哈，请输入" @keyup.enter='showInfo'>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#container',
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+            showInfo(event) {
+                console.log(event.target.value);
+            }
+        }
+    })
+</script>
+
+</html>
